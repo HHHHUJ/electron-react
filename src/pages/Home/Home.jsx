@@ -10,7 +10,7 @@ export default class Home extends Component{
     const {title} = this.props;
     return (
       <div>
-        <Link to={'self'}>go to self</Link>
+        <Link to={'self'}>go to self!!!!!!!!!!!!!</Link>
         <p>{title}</p>
       </div>
     )
