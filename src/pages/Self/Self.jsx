@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 
-@connect(state => ({ ...state }))
+// @connect(state => ({ ...state }))
 export default class Self extends Component {
   render() {
     return (

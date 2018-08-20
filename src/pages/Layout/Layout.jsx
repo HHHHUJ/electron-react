@@ -1,25 +1,55 @@
 import React from "react";
-import {NavLink,Link} from "react-router-dom"
+import { Link ,NavLink} from "react-router-dom";
+import { Menu, Icon, Switch } from "antd";
 
 class Layout extends React.Component {
+  state = {
+    theme: "dark",
+    current: "1"
+  };
+  changeTheme = value => {
+    this.setState({
+      theme: value ? "dark" : "light"
+    });
+  };
+
+  handleClick = e => {
+    console.log("click ", e);
+    this.setState({
+      current: e.key
+    });
+  };
   render() {
-    const style = {};
     return (
-      <div className={style}>
-        <ul>
-          <li>
-            <NavLink to="/">首页</NavLink>
-          </li>
-          <li>
-            <Link to="/comment">评论</Link>
-          </li>
-          <li>
-            <Link to="/self">个人</Link>
-          </li>
-        </ul>
-        <div>
-          {this.props.children}
-        </div>
+      <div>
+        <Switch
+          checked={this.state.theme === "dark"}
+          onChange={this.changeTheme}
+          checkedChildren="Dark"
+          unCheckedChildren="Light"
+        />
+        <br />
+        <br />
+        <Menu
+          theme={this.state.theme}
+          onClick={this.handleClick}
+          style={{ width: 256 }}
+          selectedKeys={[this.state.current]}
+          mode="inline"
+        >
+            <Menu.Item key="1">
+              <Icon type="mail" />
+              <span><Link to={'home'} style={{color:'#ffffff'}}>HOME</Link></span>
+            </Menu.Item>
+            <Menu.Item key="2">
+                <Icon type="appstore" />
+                <span><Link to="/comment" style={{color:'#ffffff'}}>COMMENT</Link></span>
+            </Menu.Item>
+            <Menu.Item key="3">
+                <Icon type="setting" />
+                <span><Link to="/self" style={{color:'#ffffff'}}>SELF</Link></span>
+            </Menu.Item>
+        </Menu>
       </div>
     );
   }

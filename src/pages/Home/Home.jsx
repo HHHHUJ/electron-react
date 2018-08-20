@@ -1,10 +1,10 @@
 import React,{Component} from "react";
 import {Link} from "react-router-dom";
-import {connect} from "react-redux";
+// import {connect} from "react-redux";
 
-@connect(
-    (state)=>({...state})
-)
+// @connect(
+//     (state)=>({...state})
+// )
 export default class Home extends Component{
   render(){
     const {title} = this.props;
