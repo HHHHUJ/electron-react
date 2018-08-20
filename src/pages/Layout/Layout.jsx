@@ -1,5 +1,5 @@
 import React from "react";
-import { Link ,NavLink} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Menu, Icon, Switch } from "antd";
 
 class Layout extends React.Component {

@@ -2,6 +2,7 @@ const { app, BrowserWindow ,globalShortcut} = require("electron");
 const path = require("path");
 const url = require("url");
 const pkg = require("./package.json");
+const {dialog} = require('electron')
 
 //自定义模块
 
@@ -42,7 +43,7 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
-
+  console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}))
   
 }
 
