@@ -16,9 +16,9 @@ export default class Layouts extends Component {
     return (
       <HashRouter>
         <div>
+        <Layout></Layout>
           <Switch>
-            <Route path="/" exact component={Layout} />
-            <Route path="/home" component={Home} />
+            <Route path="/" component={Home} />
             <Route path="/comment" component={Comment} />
             <Route path="/self" component={Self} />
             <Route component={Notfound} />

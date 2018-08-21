@@ -43,7 +43,6 @@ function createWindow() {
     // when you should delete the corresponding element.
     win = null;
   });
-  console.log(dialog.showOpenDialog({properties: ['openFile', 'openDirectory', 'multiSelections']}))
   
 }
 
