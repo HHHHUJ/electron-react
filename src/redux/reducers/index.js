@@ -1,10 +1,5 @@
-const initState = {
-  title:'123456'
-}
+import home from '../modules/home';
 
-export default (state=initState,action)=>{
-  switch(action.type) {
-    default:
-      return {...state}
-  }
-}
+export default {
+  home
+};
