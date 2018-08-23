@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 class Home extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      number:20
+    }
   }
   componentDidMount() {
     console.log(this.props)
@@ -17,10 +20,11 @@ class Home extends Component {
   }
   onIncrementAsync = () => {
     const {actions} = this.props;
-    actions.incrementAsync(20)
+    actions.incrementAsync(this.state.number)
   }
   render () {
     const { states } = this.props;
+    const {number} = this.state;
     return (
       <div>
         <span>this is home</span><br/>
@@ -28,7 +32,7 @@ class Home extends Component {
         {' '}
         <button onClick={this.onDecrement}>-</button>
         {' '}
-       <button onClick={this.onIncrementAsync}>一秒后加1</button>
+        <button onClick={this.onIncrementAsync}>一秒后加{number}</button>
         <span>this number is :{states.count}</span> 
       </div>
     )
