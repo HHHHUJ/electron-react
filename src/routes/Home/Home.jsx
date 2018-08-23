@@ -9,16 +9,15 @@ class Home extends Component {
   }
   onIncrement = () => {
     const {actions} = this.props;
-    let number = 1;
-    actions.increment(number)
+    actions.increment(10)
   }
   onDecrement = () => {
     const {actions} = this.props;
-    actions.decrement(1)
+    actions.decrement(5)
   }
   onIncrementAsync = () => {
     const {actions} = this.props;
-    actions.IncrementAsync()
+    actions.incrementAsync(20)
   }
   render () {
     const { states } = this.props;
@@ -29,8 +28,8 @@ class Home extends Component {
         {' '}
         <button onClick={this.onDecrement}>-</button>
         {' '}
-        <button onClick={this.onIncrementAsync}>1秒后加1</button>
-        <span>this number is :{states.count}</span>
+       <button onClick={this.onIncrementAsync}>一秒后加1</button>
+        <span>this number is :{states.count}</span> 
       </div>
     )
   };
