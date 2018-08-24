@@ -1,14 +1,34 @@
 import React, { Component } from 'react';
 
+import { Link } from 'react-router-dom';
+
 class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      number:20
+      number:20,
+      title:'1231212'
     }
   }
   componentDidMount() {
-    console.log(this.props)
+    let promise1 = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+           resolve(1);
+      },5000)
+    });
+    let promise2 = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+           resolve(2);
+      },4000)
+    });
+    let promise3 = new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+           resolve(3);
+      },2000)
+    });
+    Promise.race([promise1,promise2,promise3]).then(res=>{
+        console.log(res);
+    })
   }
   onIncrement = () => {
     const {actions} = this.props;
@@ -33,10 +53,12 @@ class Home extends Component {
         <button onClick={this.onDecrement}>-</button>
         {' '}
         <button onClick={this.onIncrementAsync}>一秒后加{number}</button>
-        <span>this number is :{states.count}</span> 
+        <span>this number is :{states.count}</span> <br/>
+        <Link to='/self'>go to self</Link>
       </div>
     )
   };
 }
+
 
 export default Home
