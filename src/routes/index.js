@@ -4,6 +4,8 @@ import asyncComponent from "../components/asyncComponent.jsx";
 
 const Home = asyncComponent(() => import("./Home"));
 const Self = asyncComponent(() => import("./Self"));
+const Point = asyncComponent(() => import("./Point"));
+const Toe = asyncComponent(() => import("./Toe"));
 
 class Routes extends Component {
   render() {
@@ -12,6 +14,8 @@ class Routes extends Component {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/self" component={Self} />
+          <Route path="/point" component={Point} />
+          <Route path="/toe" component={Toe} />
         </Switch>
       </HashRouter>
     );

@@ -1,5 +1,6 @@
 import React,{Component} from 'react';
 import {compose} from 'redux';
+import { Link } from "react-router-dom";
 import withTitle from '@/components/withTitle.jsx'
 import loading from '@/components/loading.jsx'
 import copy from '@/components/copy'
@@ -16,8 +17,10 @@ class Self extends Component {
   render() {
     return (
       <div>
-        <span>this is self</span>
         <h1>3333</h1>
+        <span>this is self</span>
+        
+        <Link to="/point"> go to point</Link>
       </div>
     );
   }

@@ -55,6 +55,7 @@ class Home extends Component {
         <button onClick={this.onIncrementAsync}>一秒后加{number}</button>
         <span>this number is :{states.count}</span> <br/>
         <Link to='/self'>go to self</Link>
+        <Link to='/toe'>go to toe</Link>
       </div>
     )
   };
