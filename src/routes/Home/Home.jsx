@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Calendar from 'react-calendar'
 
 class Home extends Component {
   constructor(props) {
@@ -31,6 +32,8 @@ class Home extends Component {
         {' '}
         <button onClick={this.onIncrementAsync}>1秒后加1</button>
         <span>this number is :{states.count}</span>
+        <Calendar></Calendar>
+
       </div>
     )
   };
